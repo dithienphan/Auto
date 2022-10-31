@@ -18,8 +18,8 @@
 #           helmfile destroy
 
 releases:
-  - name: buch
+  - name: auto
     namespace: acme
-    chart: extras/buch
-    values: [extras/buch/dev.yaml]
+    chart: extras/auto
+    values: [extras/auto/dev.yaml]
     #wait: true
