@@ -16,11 +16,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 import { type Auto } from '../../auto/entity/auto.entity.js';
-import { type Schlagwort } from './../../auto/entity/schlagwort.entity.js';
+import { type Kategorie } from './../../auto/entity/kategorie.entity.js';
 
 // TypeORM kann keine SQL-Skripte ausfuehren
 
-export const buecher: Auto[] = [
+export const autos: Auto[] = [
     // -------------------------------------------------------------------------
     // L e s e n
     // -------------------------------------------------------------------------
@@ -38,7 +38,7 @@ export const buecher: Auto[] = [
         // "Konzeption und Realisierung eines aktiven Datenbanksystems"
         isbn: '9783897225831',
         homepage: 'https://acme.at/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-01'),
         aktualisiert: new Date('2022-02-01'),
     },
@@ -56,7 +56,7 @@ export const buecher: Auto[] = [
         // "Verteilte Komponenten und Datenbankanbindung"
         isbn: '9783827315526',
         homepage: 'https://acme.biz/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-02'),
         aktualisiert: new Date('2022-02-02'),
     },
@@ -74,7 +74,7 @@ export const buecher: Auto[] = [
         // "Design Patterns"
         isbn: '9780201633610',
         homepage: 'https://acme.com/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-03'),
         aktualisiert: new Date('2022-02-03'),
     },
@@ -95,7 +95,7 @@ export const buecher: Auto[] = [
         // "Freiburger Chorauto"
         isbn: '0007097328',
         homepage: 'https://acme.de/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-04'),
         aktualisiert: new Date('2022-02-04'),
     },
@@ -116,7 +116,7 @@ export const buecher: Auto[] = [
         // "Maschinelle Lernverfahren zur Behandlung von Bonitätsrisiken im Mobilfunkgeschäft"
         isbn: '9783824404810',
         homepage: 'https://acme.es/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-05'),
         aktualisiert: new Date('2022-02-05'),
     },
@@ -134,49 +134,49 @@ export const buecher: Auto[] = [
         // "Software pioneers",
         isbn: '9783540430810',
         homepage: 'https://acme.it/',
-        schlagwoerter: [],
+        kategorien: [],
         erzeugt: new Date('2022-02-06'),
         aktualisiert: new Date('2022-02-06'),
     },
 ];
 
-export const schlagwoerter: Schlagwort[] = [
+export const kategorien: kategorie[] = [
     {
         id: '00000000-0000-0000-0000-010000000001',
-        auto: buecher[0],
-        schlagwort: 'JAVASCRIPT',
+        auto: autos[0],
+        kategorie: 'JAVASCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-020000000001',
-        auto: buecher[1],
-        schlagwort: 'TYPESCRIPT',
+        auto: autos[1],
+        kategorie: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-030000000001',
-        auto: buecher[2],
-        schlagwort: 'JAVASCRIPT',
+        auto: autos[2],
+        kategorie: 'JAVASCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-030000000002',
-        auto: buecher[2],
-        schlagwort: 'TYPESCRIPT',
+        auto: autos[2],
+        kategorie: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-500000000001',
-        auto: buecher[4],
-        schlagwort: 'TYPESCRIPT',
+        auto: autos[4],
+        kategorie: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-600000000001',
-        auto: buecher[5],
-        schlagwort: 'TYPESCRIPT',
+        auto: autos[5],
+        kategorie: 'TYPESCRIPT',
     },
 ];
 
-buecher[0]!.schlagwoerter.push(schlagwoerter[0]!);
-buecher[1]!.schlagwoerter.push(schlagwoerter[1]!);
-buecher[2]!.schlagwoerter.push(schlagwoerter[2]!, schlagwoerter[3]!);
-buecher[4]!.schlagwoerter.push(schlagwoerter[4]!);
-buecher[5]!.schlagwoerter.push(schlagwoerter[5]!);
+autos[0]!.kategorien.push(kategorien[0]!);
+autos[1]!.kategorien.push(kategorien[1]!);
+autos[2]!.kategorien.push(kategorien[2]!, kategorien[3]!);
+autos[4]!.kategorien.push(kategorien[4]!);
+autos[5]!.kategorien.push(kategorien[5]!);
 
 /* eslint-enable @typescript-eslint/no-non-null-assertion */

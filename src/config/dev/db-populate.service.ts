@@ -26,7 +26,7 @@ import { Auto } from '../../auto/entity/auto.entity.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Kategorie } from '../../auto/entity/kategorie.entity.js';
 import { Repository } from 'typeorm';
-import { buecher } from './testdaten.js';
+import { autos } from './testdaten.js';
 import { configDir } from '../node.js';
 import { getLogger } from '../../logger/logger.js';
 import { readFileSync } from 'node:fs';
@@ -42,7 +42,7 @@ export class DbPopulateService implements OnApplicationBootstrap {
 
     readonly #logger = getLogger(DbPopulateService.name);
 
-    readonly #buecher = buecher;
+    readonly #autos = autos;
 
     /**
      * Initialisierung durch DI mit `Repository<Auto>` gemäß _TypeORM_.
@@ -86,7 +86,7 @@ export class DbPopulateService implements OnApplicationBootstrap {
         const sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
 
-        const saved = await this.#repo.save(this.#buecher);
+        const saved = await this.#repo.save(this.#autos);
         this.#logger.warn(
             '#populatePostgres: %d Datensaetze eingefuegt',
             saved.length,
@@ -118,7 +118,7 @@ export class DbPopulateService implements OnApplicationBootstrap {
         sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
 
-        const saved = await this.#repo.save(this.#buecher);
+        const saved = await this.#repo.save(this.#autos);
         this.#logger.warn(
             '#populateMySQL: %d Datensaetze eingefuegt',
             saved.length,
