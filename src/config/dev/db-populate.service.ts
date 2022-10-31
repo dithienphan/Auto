@@ -22,10 +22,10 @@
 
 import { Injectable, type OnApplicationBootstrap } from '@nestjs/common';
 import { dbPopulate, typeOrmModuleOptions } from '../db.js';
-import { Buch } from '../../buch/entity/buch.entity.js';
+import { Auto } from '../../auto/entity/auto.entity.js';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Kategorie } from '../../auto/entity/kategorie.entity.js';
 import { Repository } from 'typeorm';
-import { Schlagwort } from '../../buch/entity/schlagwort.entity.js';
 import { buecher } from './testdaten.js';
 import { configDir } from '../node.js';
 import { getLogger } from '../../logger/logger.js';
@@ -38,16 +38,16 @@ import { resolve } from 'node:path';
  */
 @Injectable()
 export class DbPopulateService implements OnApplicationBootstrap {
-    readonly #repo: Repository<Buch>;
+    readonly #repo: Repository<Auto>;
 
     readonly #logger = getLogger(DbPopulateService.name);
 
     readonly #buecher = buecher;
 
     /**
-     * Initialisierung durch DI mit `Repository<Buch>` gemäß _TypeORM_.
+     * Initialisierung durch DI mit `Repository<Auto>` gemäß _TypeORM_.
      */
-    constructor(@InjectRepository(Buch) repo: Repository<Buch>) {
+    constructor(@InjectRepository(Auto) repo: Repository<Auto>) {
         this.#repo = repo;
     }
 
@@ -69,7 +69,7 @@ export class DbPopulateService implements OnApplicationBootstrap {
     }
 
     async #populatePostgres() {
-        const schema = Buch.name.toLowerCase();
+        const schema = Auto.name.toLowerCase();
         this.#logger.warn(
             `${typeOrmModuleOptions.type}: Schema ${schema} wird geloescht`,
         );
@@ -94,27 +94,27 @@ export class DbPopulateService implements OnApplicationBootstrap {
     }
 
     async #populateMySQL() {
-        let tabelle = Schlagwort.name.toLowerCase();
+        let tabelle = Kategorie.name.toLowerCase();
         this.#logger.warn(
             `${typeOrmModuleOptions.type}: Tabelle ${tabelle} wird geloescht`,
         );
         await this.#repo.query(
-            `DROP TABLE IF EXISTS ${Schlagwort.name.toLowerCase()};`,
+            `DROP TABLE IF EXISTS ${Kategorie.name.toLowerCase()};`,
         );
 
-        tabelle = Buch.name.toLowerCase();
+        tabelle = Auto.name.toLowerCase();
         this.#logger.warn(
             `${typeOrmModuleOptions.type}: Tabelle ${tabelle} wird geloescht`,
         );
         await this.#repo.query(
-            `DROP TABLE IF EXISTS ${Buch.name.toLowerCase()};`,
+            `DROP TABLE IF EXISTS ${Auto.name.toLowerCase()};`,
         );
 
         const scriptDir = resolve(configDir, 'dev', typeOrmModuleOptions.type!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        let createScript = resolve(scriptDir, 'create-table-buch.sql');
+        let createScript = resolve(scriptDir, 'create-table-auto.sql');
         let sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
-        createScript = resolve(scriptDir, 'create-table-schlagwort.sql');
+        createScript = resolve(scriptDir, 'create-table-kategorie.sql');
         sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
 

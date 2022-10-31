@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-import { type Buch } from '../../buch/entity/buch.entity.js';
-import { type Schlagwort } from './../../buch/entity/schlagwort.entity.js';
+import { type Auto } from '../../auto/entity/auto.entity.js';
+import { type Schlagwort } from './../../auto/entity/schlagwort.entity.js';
 
 // TypeORM kann keine SQL-Skripte ausfuehren
 
-export const buecher: Buch[] = [
+export const buecher: Auto[] = [
     // -------------------------------------------------------------------------
     // L e s e n
     // -------------------------------------------------------------------------
@@ -92,7 +92,7 @@ export const buecher: Buch[] = [
         rabatt: 0.044,
         lieferbar: true,
         datum: new Date('2022-02-04'),
-        // "Freiburger Chorbuch"
+        // "Freiburger Chorauto"
         isbn: '0007097328',
         homepage: 'https://acme.de/',
         schlagwoerter: [],
@@ -143,32 +143,32 @@ export const buecher: Buch[] = [
 export const schlagwoerter: Schlagwort[] = [
     {
         id: '00000000-0000-0000-0000-010000000001',
-        buch: buecher[0],
+        auto: buecher[0],
         schlagwort: 'JAVASCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-020000000001',
-        buch: buecher[1],
+        auto: buecher[1],
         schlagwort: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-030000000001',
-        buch: buecher[2],
+        auto: buecher[2],
         schlagwort: 'JAVASCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-030000000002',
-        buch: buecher[2],
+        auto: buecher[2],
         schlagwort: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-500000000001',
-        buch: buecher[4],
+        auto: buecher[4],
         schlagwort: 'TYPESCRIPT',
     },
     {
         id: '00000000-0000-0000-0000-600000000001',
-        buch: buecher[5],
+        auto: buecher[5],
         schlagwort: 'TYPESCRIPT',
     },
 ];
