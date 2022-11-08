@@ -17,7 +17,6 @@ export class Kategorie {
     id: string | undefined;
 
     // https://typeorm.io/many-to-one-one-to-many-relations
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     @ManyToOne(() => Auto, (auto) => auto.kategorien)
     // https://typeorm.io/relations#joincolumn-options
     @JoinColumn({ name: 'auto_id' })
