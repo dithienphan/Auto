@@ -30,7 +30,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         AuthModule,
     ],
     controllers: [AutoGetController, AutoWriteController],
-    // Provider sind z.B. Service-Klassen fuer DI
+    // Provider sind z.B. Service-Klassen für DI
     providers: [
         AutoReadService,
         AutoWriteService,
@@ -39,7 +39,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         AutoMutationResolver,
         QueryBuilder,
     ],
-    // Export der Provider fuer DI in anderen Modulen
+    // Export der Provider für DI in anderen Modulen
     exports: [AutoReadService, AutoWriteService, AutoValidationService],
 })
 export class AutoModule {}
