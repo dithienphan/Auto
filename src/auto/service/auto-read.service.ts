@@ -65,7 +65,7 @@ export class AutoReadService {
 
         const auto = await this.#queryBuilder.buildId(autoId).getOne();
         if (auto === null) {
-            this.#logger.debug('findById: Kein Buch gefunden');
+            this.#logger.debug('findById: Kein Auto gefunden');
             return;
         }
 
