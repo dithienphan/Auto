@@ -154,7 +154,7 @@ describe('POST /', () => {
                 'Ein Automodell muss mit einem Autostaben, einer Ziffer oder _ beginnen.',
                 'Die PS muss über 0 liegen.',
                 'Die Art eines Autos muss VERBRENNER oder VERBRENNER sein.',
-                'Der Hersteller eines Autoes muss AUDI oder BMW sein.',
+                'Der Hersteller eines Autos muss AUDI oder BMW sein.',
                 'Der Rabatt muss ein Wert zwischen 0 und 1 sein.',
                 'Das Datum muss im Format yyyy-MM-dd sein.',
                 'Die modellNummer-Nummer ist nicht korrekt.',
