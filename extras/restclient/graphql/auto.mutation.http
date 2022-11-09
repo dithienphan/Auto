@@ -76,7 +76,7 @@ mutation {
       datum: "2022-01-31",
       isbn: "3897225832",
       homepage: "http://test.de/",
-      schlagwoerter: ["JAVASCRIPT"]
+      schlagwoerter: ["SUV"]
     }
   )
 }
@@ -100,7 +100,7 @@ mutation {
       datum: "123",
       isbn: "123",
       homepage: "?!$",
-      schlagwoerter: ["JAVASCRIPT"]
+      schlagwoerter: ["KOMBI"]
     }
   )
 }
