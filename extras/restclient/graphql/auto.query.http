@@ -1,0 +1,114 @@
+// Copyright (C) 2020 - present Juergen Zimmermann, Hochschule Karlsruhe
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+//
+// N e t z w e r k   -   V e r b i n d u n g   n o t w e n d i g
+//
+
+// siehe auch https://studio.apollographql.com/sandbox/explorer
+
+### Suche id, titel, art und version von allen Autosn
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  autos {
+    id
+    titel
+    art
+    version
+  }
+}
+
+### Suche titel, art, isbn und version von einem Auto mit vorhandener Auto-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
+  auto(id: $id) {
+    titel
+    art
+    isbn
+    version
+  }
+}
+
+{
+  "id": "00000000-0000-0000-0000-000000000001"
+}
+
+### Suche titel von einem Auto mit nicht-vorhandener Auto-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "99999999-9999-9999-9999-999999999999") {
+  auto(id: $id) {
+    titel
+  }
+}
+
+{
+  "id": "99999999-9999-9999-9999-999999999999"
+}
+
+### Suche art von Autosn mit vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "Alpha") {
+  autos(titel: $titel) {
+    art
+  }
+}
+
+{
+  "titel": "Alpha"
+}
+
+### Suche titel, art und schlagwoerter von Autosn mit vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "a") {
+  autos(titel: $titel) {
+    titel
+    art
+    schlagwoerter
+  }
+}
+
+{
+  "titel": "a"
+}
+
+### Suche art von Autosn mit NICHT-vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "Nichtvorhanden") {
+  autos(titel: $titel) {
+    art
+  }
+}
+
+{
+  "titel": "Nichtvorhanden"
+}
