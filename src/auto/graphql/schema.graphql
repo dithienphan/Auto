@@ -1,98 +1,81 @@
-# Copyright (C) 2021 - present Juergen Zimmermann, Hochschule Karlsruhe
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# siehe app.module.ts
-
 schema {
   query: Query
   mutation: Mutation
 }
 
-"Funktionen, um Bücherdaten zu lesen"
+"Funktionen, um Autodaten zu lesen"
 type Query {
-  buecher(titel: String): [Buch!]
+  autos(modell: String): [Auto!]
 
-  buch(id: ID!): Buch
+  auto(id: ID!): Auto
 }
 
-"Funktionen, um Bücher neu anzulegen, zu aktualisieren oder zu löschen"
+"Funktionen, um Autos neu anzulegen, zu aktualisieren oder zu löschen"
 type Mutation {
-  create(input: BuchInput!): String
+  create(input: AutoInput!): String
 
-  update(input: BuchUpdateInput!): Int
+  update(input: AutoUpdateInput!): Int
 
   delete(id: ID!): Boolean
 }
 
-"Datenschema zu einem Buch, das gelesen wird"
-type Buch {
+"Datenschema zu einem Auto, das gelesen wird"
+type Auto {
   id: ID
   version: Int
-  titel: String
-  rating: Int
+  modell: String
+  ps: Int
   art: Art
-  verlag: Verlag
+  hersteller: Hersteller
   preis: Float
   rabatt: Float
   lieferbar: Boolean
   datum: String
-  isbn: String
+  modellNummer: String
   homepage: String
-  schlagwoerter: [String]
+  kategorien: [String]
 }
 
-"Enum-Typ für die Art eines Buches"
+"Enum-Typ für die Art eines Autos"
 enum Art {
-  DRUCKAUSGABE
-  KINDLE
+  ELEKTRO
+  VERBRENNER
 }
 
-"Enum-Typ für den Verlag eines Buches"
-enum Verlag {
-  FOO_VERLAG
-  BAR_VERLAG
+"Enum-Typ für den Hersteller eines Autos"
+enum Hersteller {
+  AUDI
+  BMW
 }
 
-"Daten für ein neues Buch"
-input BuchInput {
-  titel: String!
-  rating: Int
+"Daten für ein neues Auto"
+input AutoInput {
+  modell: String!
+  ps: Int
   art: Art
-  verlag: Verlag!
+  hersteller: Hersteller!
   preis: Float
   rabatt: Float
   lieferbar: Boolean
   datum: String
-  isbn: String
+  modellNummer: String
   homepage: String
-  schlagwoerter: [String]
+  kategorien: [String]
 }
 
-"Daten für ein zu änderndes Buch"
-input BuchUpdateInput {
+"Daten für ein zu änderndes Auto"
+input AutoUpdateInput {
   id: ID
   version: Int
-  titel: String!
-  rating: Int
+  modell: String!
+  ps: Int
   art: Art
-  verlag: Verlag!
+  hersteller: Hersteller!
   preis: Float
   rabatt: Float
   lieferbar: Boolean
   datum: String
-  isbn: String
+  modellNummer: String
   homepage: String
-  schlagwoerter: [String]
+  kategorien: [String]
 }
