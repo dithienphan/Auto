@@ -7,18 +7,17 @@ import { Repository } from 'typeorm';
 import { getLogger } from '../../logger/logger.js';
 
 export interface Suchkriterien {
-    readonly modell?: string;
-    readonly ps?: number;
-    readonly art?: AutoArt;
-    readonly hersteller?: Hersteller;
+    readonly version?: number;
+    readonly modell?: number;
+    readonly ps?: AutoArt;
+    readonly art?: Hersteller;
+    readonly hersteller?: number;
     readonly preis?: number;
-    readonly rabatt?: number;
-    readonly lieferbar?: boolean;
+    readonly rabatt?: boolean;
     readonly datum?: string;
     readonly modellNummer?: string;
     readonly homepage?: string;
-    readonly suv?: boolean;
-    readonly kombi?: boolean;
+    readonly kategorien?: string[];
 }
 
 /**
@@ -66,7 +65,7 @@ export class AutoReadService {
 
         const auto = await this.#queryBuilder.buildId(autoId).getOne();
         if (auto === null) {
-            this.#logger.debug('findById: Kein Buch gefunden');
+            this.#logger.debug('findById: Kein Auto gefunden');
             return;
         }
 
