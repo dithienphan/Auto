@@ -134,7 +134,7 @@ export const kategorien: Kategorie[] = [
     {
         id: '00000000-0000-0000-0000-020000000001',
         auto: autos[1],
-        kategorie: 'TYPESCRIPT',
+        kategorie: 'KOMBI',
     },
     {
         id: '00000000-0000-0000-0000-030000000001',
