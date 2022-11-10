@@ -2,8 +2,6 @@ CREATE SCHEMA IF NOT EXISTS AUTHORIZATION auto;
 
 ALTER ROLE auto SET search_path = 'auto';
 
-Drop TABLE auto;
-
 CREATE TABLE IF NOT EXISTS auto (
     id            char(36) PRIMARY KEY USING INDEX TABLESPACE autospace,
     version       integer NOT NULL DEFAULT 0,
