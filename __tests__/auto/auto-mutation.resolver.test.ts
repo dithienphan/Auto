@@ -53,15 +53,9 @@ describe('GraphQL Mutations', () => {
                 mutation {
                     create(
                         input: {
-<<<<<<< HEAD
-                            modell: "Testgraphql",
-                            ps: 1,
-                            art: ELEKTRO,
-=======
                             modell: "Modell A neu",
                             ps: 500,
                             art: VERBRENNER,
->>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: 99.99,
                             rabatt: 0.099,
@@ -109,11 +103,7 @@ describe('GraphQL Mutations', () => {
                         input: {
                             modell: "Nichtadmin",
                             ps: 1,
-<<<<<<< HEAD
-                            art: ELEKTRO,
-=======
                             art: VERBRENNER,
->>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: 11.1,
                             rabatt: 0.011,
@@ -216,11 +206,7 @@ describe('GraphQL Mutations', () => {
                             version: 1,
                             modell: "?!$",
                             ps: 999,
-<<<<<<< HEAD
-                            art: ELEKTRO,
-=======
                             art: VERBRENNER,
->>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: -999,
                             rabatt: 999,

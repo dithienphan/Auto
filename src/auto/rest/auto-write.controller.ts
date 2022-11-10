@@ -340,13 +340,10 @@ export class AutoWriteController {
                     .send(msg);
             }
 
-<<<<<<< HEAD
-=======
             // case 'ModellNummerExists': {
             //     return this.#handleModellNummerExists(err.modellnummer, res);
             // }
 
->>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
             case 'VersionInvalid': {
                 const { version } = err;
                 const msg = `Die Versionsnummer "${version}" ist ungueltig.`;
