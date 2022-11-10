@@ -1,4 +1,4 @@
-import { Auto, type AutoArt, type Hersteller } from '../entity/auto.entity';
+import { Auto, type AutoArt, type Hersteller } from '../entity/auto.entity.js';
 import { AutoValidationService } from './auto-validation.service.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
@@ -15,7 +15,7 @@ export interface Suchkriterien {
     readonly preis?: number;
     readonly rabatt?: number;
     readonly datum?: string;
-    readonly modellNummer?: string;
+    readonly modellnummer?: string;
     readonly homepage?: string;
     readonly kategorien?: string[];
 }

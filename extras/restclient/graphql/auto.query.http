@@ -33,7 +33,7 @@ X-REQUEST-TYPE: GraphQL
   }
 }
 
-### Suche modell, art, modellNummer und version von einem Auto mit vorhandener Auto-ID
+### Suche modell, art, modellnummer und version von einem Auto mit vorhandener Auto-ID
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
@@ -42,7 +42,7 @@ query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
   auto(id: $id) {
     modell
     art
-    modellNummer
+    modellnummer
     version
   }
 }

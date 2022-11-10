@@ -99,7 +99,7 @@ export class AutoMutationResolver {
             rabatt: autoDTO.rabatt,
             lieferbar: autoDTO.lieferbar,
             datum: autoDTO.datum,
-            modellNummer: autoDTO.modellNummer,
+            modellnummer: autoDTO.modellnummer,
             homepage: autoDTO.homepage,
             kategorien: [],
             erzeugt: undefined,
@@ -124,7 +124,7 @@ export class AutoMutationResolver {
                 return err.messages.join(' ');
             }
             case 'ModellNummerExists': {
-                return `Die MODELLNUMMER ${err.modellNummer} existiert bereits`;
+                return `Die MODELLNUMMER ${err.modellnummer} existiert bereits`;
             }
             default: {
                 return 'Unbekannter Fehler';

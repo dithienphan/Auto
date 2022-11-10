@@ -65,17 +65,21 @@ X-REQUEST-TYPE: GraphQL
 
 mutation {
   create(
-    input: {
-      modell: 'Alpha',
-      ps: 4,
-      art: 'VERBRENNER',
-      hersteller: 'AUDI',
-      preis: 11.1,
-      rabatt: 0.011,
-      lieferbar: true,
-      datum: new Date('2022-02-01'),
-      modellNummer: '9783897225831',
-      homepage: 'https://acme.at/'
+  input: {
+    modell: 'Alpha',
+    ps: 4,
+    art: 'VERBRENNER',
+    hersteller: 'AUDI',
+    preis: 11.1,
+    rabatt: 0.011,
+    lieferbar: true,
+    datum: new
+    Date(
+    '2022-02-01'
+    ),
+    modellnummer: '9783897225831',
+    homepage: 'https://acme.at/',
+    "kategorien": ['SUV']
     }
   )
 }
@@ -99,9 +103,9 @@ mutation {
       rabatt: 0.011,
       lieferbar: true,
       datum: new Date('2022-02-01'),
-      modellNummer: '9783897225831',
+      modellnummer: '9783897225831',
       homepage: 'https://acme.at/'
-    },
+    }
   )
 }
 
@@ -124,9 +128,9 @@ mutation {
       rabatt: 0.011,
       lieferbar: true,
       datum: new Date('2022-02-01'),
-      modellNummer: '9783897225831',
+      modellnummer: '9783897225831',
       homepage: 'https://acme.at/'
-    },
+    }
   )
 }
 
@@ -149,9 +153,9 @@ mutation {
       rabatt: 0.011,
       lieferbar: true,
       datum: new Date('2022-02-01'),
-      modellNummer: '9783897225831',
+      modellnummer: '9783897225831',
       homepage: 'https://acme.at/'
-    },
+    }
   )
 }
 
@@ -172,7 +176,7 @@ mutation {
       rabatt: 0.011,
       lieferbar: true,
       datum: new Date('2022-02-01'),
-      modellNummer: '9783897225831',
+      modellnummer: '9783897225831',
       homepage: 'https://acme.at/'
     }
   )

@@ -53,15 +53,21 @@ describe('GraphQL Mutations', () => {
                 mutation {
                     create(
                         input: {
+<<<<<<< HEAD
                             modell: "Testgraphql",
                             ps: 1,
                             art: ELEKTRO,
+=======
+                            modell: "Modell A neu",
+                            ps: 500,
+                            art: VERBRENNER,
+>>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: 99.99,
                             rabatt: 0.099,
                             lieferbar: true,
                             datum: "2022-02-28",
-                            modellNummer: "3897225832",
+                            modellnummer: "3897225832",
                             homepage: "http://test.de/",
                             kategorien: ["SUV"]
                         }
@@ -103,14 +109,18 @@ describe('GraphQL Mutations', () => {
                         input: {
                             modell: "Nichtadmin",
                             ps: 1,
+<<<<<<< HEAD
                             art: ELEKTRO,
+=======
+                            art: VERBRENNER,
+>>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: 11.1,
                             rabatt: 0.011,
                             lieferbar: true,
                             datum: "2021-01-31",
-                            modellNummer: "9783663087465",
-                            homepage: "http://acme.com",
+                            modellnummer: "9783663087465",
+                            homepage: "http://test.com",
                             kategorien: ["SUV"]
                         }
                     )
@@ -155,15 +165,15 @@ describe('GraphQL Mutations', () => {
                         input: {
                             id: "00000000-0000-0000-0000-000000000003",
                             version: 0,
-                            modell: "Geaendert",
-                            ps: 5,
+                            modell: "Gamma",
+                            ps: 1,
                             art: VERBRENNER,
                             hersteller: AUDI,
-                            preis: 99.99,
-                            rabatt: 0.099,
-                            lieferbar: false,
-                            datum: "2021-01-02",
-                            modellNummer: "9780201633610",
+                            preis: 33.30,
+                            rabatt: 0.033,
+                            lieferbar: true,
+                            datum: "2022-02-03",
+                            modellnummer: "9780201633610",
                             homepage: "https://acme.com"
                         }
                     )
@@ -206,13 +216,17 @@ describe('GraphQL Mutations', () => {
                             version: 1,
                             modell: "?!$",
                             ps: 999,
+<<<<<<< HEAD
                             art: ELEKTRO,
+=======
+                            art: VERBRENNER,
+>>>>>>> f148e1c4af18f0972f5a3f849288129337db0ba5
                             hersteller: AUDI,
                             preis: -999,
                             rabatt: 999,
                             lieferbar: false,
                             datum: "123",
-                            modellNummer: "123",
+                            modellnummer: "123",
                             homepage: "?!$",
                         }
                     )
@@ -262,7 +276,7 @@ describe('GraphQL Mutations', () => {
         );
         expect(message).toEqual(
             expect.stringContaining(
-                'Die modellNummer-Nummer ist nicht korrekt.',
+                'Die modellnummer-Nummer ist nicht korrekt.',
             ),
         );
         expect(message).toEqual(
@@ -295,7 +309,7 @@ describe('GraphQL Mutations', () => {
                             rabatt: 0.099,
                             lieferbar: false,
                             datum: "2021-01-02",
-                            modellNummer: "9780201633610",
+                            modellnummer: "9780201633610",
                             homepage: "https://acme.com",
                         }
                     )

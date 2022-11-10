@@ -8,6 +8,7 @@ import { AutoValidationService } from './service/auto-validation.service.js';
 import { AutoWriteController } from './rest/auto-write.controller.js';
 import { AutoWriteService } from './service/auto-write.service.js';
 import { Kategorie } from './entity/kategorie.entity.js';
+import { MailModule } from '../mail/mail.module.js';
 import { Module } from '@nestjs/common';
 import { QueryBuilder } from './service/query-builder.js';
 
@@ -25,6 +26,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
  */
 @Module({
     imports: [
+        MailModule,
         // siehe auch src\app.module.ts
         TypeOrmModule.forFeature([Auto, Kategorie]),
         AuthModule,

@@ -21,7 +21,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-01'),
         // "Konzeption und Realisierung eines aktiven Datenbanksystems"
-        modellNummer: '9783897225831',
+        modellnummer: '9783897225831',
         homepage: 'https://acme.at/',
         kategorien: [],
         erzeugt: new Date('2022-02-01'),
@@ -39,7 +39,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-02'),
         // "Verteilte Komponenten und Datenbankanbindung"
-        modellNummer: '9783827315526',
+        modellnummer: '9783827315526',
         homepage: 'https://acme.biz/',
         kategorien: [],
         erzeugt: new Date('2022-02-02'),
@@ -57,7 +57,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-03'),
         // "Design Patterns"
-        modellNummer: '9780201633610',
+        modellnummer: '9780201633610',
         homepage: 'https://acme.com/',
         kategorien: [],
         erzeugt: new Date('2022-02-03'),
@@ -78,7 +78,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-04'),
         // "Freiburger Chorauto"
-        modellNummer: '0007097328',
+        modellnummer: '0007097328',
         homepage: 'https://acme.de/',
         kategorien: [],
         erzeugt: new Date('2022-02-04'),
@@ -99,7 +99,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-05'),
         // "Maschinelle Lernverfahren zur Behandlung von Bonitätsrisiken im Mobilfunkgeschäft"
-        modellNummer: '9783824404810',
+        modellnummer: '9783824404810',
         homepage: 'https://acme.es/',
         kategorien: [],
         erzeugt: new Date('2022-02-05'),
@@ -117,7 +117,7 @@ export const autos: Auto[] = [
         lieferbar: true,
         datum: new Date('2022-02-06'),
         // "Software pioneers",
-        modellNummer: '9783540430810',
+        modellnummer: '9783540430810',
         homepage: 'https://acme.it/',
         kategorien: [],
         erzeugt: new Date('2022-02-06'),

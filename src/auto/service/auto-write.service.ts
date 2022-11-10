@@ -158,13 +158,13 @@ export class AutoWriteService {
             return { type: 'VersionExists', version: version! };
         }
 
-        const { modellNummer } = auto;
+        const { modellnummer } = auto;
         autos = await this.#autoReadService.find({
-            modellNummer,
+            modellnummer,
         });
 
         if (autos.length > 0) {
-            return { type: 'ModellNummerExists', modellNummer };
+            return { type: 'ModellNummerExists', modellnummer };
         }
 
         this.#logger.debug('#validateCreate: ok');
