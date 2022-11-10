@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS auto (
     ps        integer NOT NULL CHECK (rating >= 0),
                   -- https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
     art           varchar(12) NOT NULL CHECK (art ~ 'ELEKTRO|VERBRENNER'),
-    hersteller        varchar(12) NOT NULL CHECK (verlag ~ 'AUDI|BMW'),
+    hersteller        varchar(12) NOT NULL CHECK (hersteller ~ 'AUDI|BMW'),
                   -- https://www.postgresql.org/docs/current/datatype-numeric.html#DATATYPE-NUMERIC-DECIMAL
                   -- 10 Stellen, davon 2 Nachkommastellen
     preis         decimal(8,2) NOT NULL,

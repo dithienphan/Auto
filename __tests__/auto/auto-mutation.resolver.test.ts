@@ -206,7 +206,7 @@ describe('GraphQL Mutations', () => {
                             version: 1,
                             modell: "?!$",
                             ps: 999,
-                            art: KINDLE,
+                            art: ELEKTRO,
                             hersteller: AUDI,
                             preis: -999,
                             rabatt: 999,
