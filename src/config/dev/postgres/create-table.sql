@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS auto (
     modell         varchar(40) NOT NULL UNIQUE USING INDEX TABLESPACE autospace,
                   -- https://www.postgresql.org/docs/current/ddl-constraints.html#id-1.5.4.6.6
                   -- https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS
-    ps        integer NOT NULL CHECK (rating >= 0),
+    ps        integer NOT NULL CHECK (ps >= 0),
                   -- https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
     art           varchar(12) NOT NULL CHECK (art ~ 'ELEKTRO|VERBRENNER'),
     hersteller        varchar(12) NOT NULL CHECK (hersteller ~ 'AUDI|BMW'),
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS auto (
                   -- https://www.postgresql.org/docs/current/datatype-datetime.html
     datum         date,
     homepage      varchar(40),
-    nummer          varchar(16) NOT NULL UNIQUE USING INDEX TABLESPACE autospace,
+    modellNummer  varchar(16) NOT NULL UNIQUE USING INDEX TABLESPACE autospace,
                   -- https://www.postgresql.org/docs/current/datatype-datetime.html
     erzeugt       timestamp NOT NULL DEFAULT NOW(),
     aktualisiert  timestamp NOT NULL DEFAULT NOW()
