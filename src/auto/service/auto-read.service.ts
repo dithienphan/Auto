@@ -8,12 +8,12 @@ import { getLogger } from '../../logger/logger.js';
 
 export interface Suchkriterien {
     readonly version?: number;
-    readonly modell?: number;
-    readonly ps?: AutoArt;
-    readonly art?: Hersteller;
-    readonly hersteller?: number;
+    readonly modell?: string;
+    readonly ps?: number;
+    readonly art?: AutoArt;
+    readonly hersteller?: Hersteller;
     readonly preis?: number;
-    readonly rabatt?: boolean;
+    readonly rabatt?: number;
     readonly datum?: string;
     readonly modellNummer?: string;
     readonly homepage?: string;

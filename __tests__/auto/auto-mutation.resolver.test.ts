@@ -55,7 +55,7 @@ describe('GraphQL Mutations', () => {
                         input: {
                             modell: "Testgraphql",
                             ps: 1,
-                            art: KINDLE,
+                            art: ELEKTRO,
                             hersteller: AUDI,
                             preis: 99.99,
                             rabatt: 0.099,
@@ -103,7 +103,7 @@ describe('GraphQL Mutations', () => {
                         input: {
                             modell: "Nichtadmin",
                             ps: 1,
-                            art: KINDLE,
+                            art: ELEKTRO,
                             hersteller: AUDI,
                             preis: 11.1,
                             rabatt: 0.011,
