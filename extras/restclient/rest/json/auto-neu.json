@@ -1,0 +1,12 @@
+{
+  "modell":"BMW",
+  "ps":4,
+  "art":"VERBRENNER",
+  "hersteller":"BMW",
+  "preis":12000.99,
+  "rabatt":0.011,
+  "lieferbar":true,
+  "datum":"2022-02-01T00:00:00.000Z",
+  "modellNummer":"9783897225831",
+  "homepage":"https://acme.at/"
+}
