@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS auto (
     lieferbar     BOOLEAN NOT NULL DEFAULT FALSE,
     datum         DATE,
     homepage      VARCHAR(40),
-    nummer          VARCHAR(16) UNIQUE NOT NULL,
+    modellNummer  VARCHAR(16) UNIQUE NOT NULL,
     erzeugt       DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP),
     aktualisiert  DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP)
 ) TABLESPACE buchspace ROW_FORMAT=COMPACT;
