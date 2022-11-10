@@ -27,7 +27,7 @@ export interface VersionExists {
  */
 export interface ModellNummerExists {
     readonly type: 'ModellNummerExists';
-    readonly modellNummer: string | null | undefined;
+    readonly modellnummer: string | null | undefined;
     readonly id?: string;
 }
 

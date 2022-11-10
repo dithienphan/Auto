@@ -105,7 +105,7 @@ export class AutoWriteController {
 
         const location = `${getBaseUri(req)}/${result as string}`;
         this.#logger.debug('create: location=%s', location);
-        return res.location(location).send();
+        return res;
     }
 
     /**
@@ -243,7 +243,7 @@ export class AutoWriteController {
             rabatt: autoDTO.rabatt,
             lieferbar: autoDTO.lieferbar,
             datum: autoDTO.datum,
-            modellNummer: autoDTO.modellNummer,
+            modellnummer: autoDTO.modellnummer,
             homepage: autoDTO.homepage,
             kategorien: [],
             erzeugt: undefined,
@@ -251,14 +251,17 @@ export class AutoWriteController {
         };
 
         // Rueckwaertsverweis von Kategorie zu Auto
-        autoDTO.kategorien.forEach((k) => {
-            const kategorie: Kategorie = {
-                id: undefined,
-                kategorie: k,
-                auto,
-            };
-            auto.kategorien.push(kategorie);
-        });
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        if (autoDTO.kategorien !== undefined && autoDTO.kategorien.length > 0) {
+            autoDTO.kategorien.forEach((k) => {
+                const kategorie: Kategorie = {
+                    id: undefined,
+                    kategorie: k,
+                    auto,
+                };
+                auto.kategorien.push(kategorie);
+            });
+        }
 
         return auto;
     }
@@ -270,7 +273,7 @@ export class AutoWriteController {
             }
 
             case 'ModellNummerExists': {
-                return this.#handleModellNummerExists(err.modellNummer, res);
+                return this.#handleModellNummerExists(err.modellnummer, res);
             }
 
             default: {
@@ -311,7 +314,7 @@ export class AutoWriteController {
             rabatt: autoDTO.rabatt,
             lieferbar: autoDTO.lieferbar,
             datum: autoDTO.datum,
-            modellNummer: autoDTO.modellNummer,
+            modellnummer: autoDTO.modellnummer,
             homepage: autoDTO.homepage,
             kategorien: [],
             erzeugt: undefined,
@@ -337,9 +340,9 @@ export class AutoWriteController {
                     .send(msg);
             }
 
-            case 'ModellNummerExists': {
-                return this.#handleModellNummerExists(err.modellNummer, res);
-            }
+            // case 'ModellNummerExists': {
+            //     return this.#handleModellNummerExists(err.modellnummer, res);
+            // }
 
             case 'VersionInvalid': {
                 const { version } = err;

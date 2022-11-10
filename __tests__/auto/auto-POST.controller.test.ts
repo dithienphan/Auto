@@ -41,7 +41,7 @@ const neuesAuto: AutoDTO = {
     rabatt: 0.099,
     lieferbar: true,
     datum: '2022-02-28',
-    modellNummer: '9780007006441',
+    modellnummer: '9780007006441',
     homepage: 'https://test.de/',
     kategorien: ['SUV', 'KOMBI'],
 };
@@ -54,7 +54,7 @@ const neuesAutoInvalid: Record<string, unknown> = {
     rabatt: 2,
     lieferbar: true,
     datum: '12345123123',
-    modellNummer: 'falsche-modellNummer',
+    modellNummer: 'falsche-modellnummer',
     kategorien: [],
 };
 const neuesAutoModellExistiert: AutoDTO = {
@@ -66,7 +66,7 @@ const neuesAutoModellExistiert: AutoDTO = {
     rabatt: 0.099,
     lieferbar: true,
     datum: '2022-02-28',
-    modellNummer: '9780007097326',
+    modellnummer: '9780007097326',
     homepage: 'https://test.de/',
     kategorien: ['SUV', 'KOMBI'],
 };
@@ -157,7 +157,7 @@ describe('POST /', () => {
                 'Der Hersteller eines Autoes muss AUDI oder BMW sein.',
                 'Der Rabatt muss ein Wert zwischen 0 und 1 sein.',
                 'Das Datum muss im Format yyyy-MM-dd sein.',
-                'Die modellNummer-Nummer ist nicht korrekt.',
+                'Die modellnummer-Nummer ist nicht korrekt.',
             ]),
         );
     });

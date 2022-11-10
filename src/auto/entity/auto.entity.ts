@@ -78,7 +78,7 @@ export class Auto {
 
     @Column('varchar')
     @ApiProperty({ example: 'BMW-2022-SUV-2222', type: String })
-    readonly modellNummer!: string;
+    readonly modellnummer!: string;
 
     @Column('varchar')
     @ApiProperty({ example: 'https://bmw.de/', type: String })
@@ -110,6 +110,6 @@ export const removeModellNummerDash = (auto: Auto) => {
     const copy = auto as {
         -readonly [K in keyof Auto]: Auto[K]; // eslint-disable-line no-use-before-define
     };
-    copy.modellNummer = auto.modellNummer.replaceAll('-', '');
+    copy.modellnummer = auto.modellnummer.replaceAll('-', '');
     return copy;
 };

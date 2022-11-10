@@ -106,7 +106,7 @@ export class AutoQuery implements Suchkriterien {
     declare readonly datum: string;
 
     @ApiProperty({ required: false })
-    declare readonly modellNummer: string;
+    declare readonly modellnummer: string;
 
     @ApiProperty({ required: false })
     declare readonly homepage: string;
@@ -292,7 +292,7 @@ export class AutoGetController {
             rabatt: auto.rabatt,
             lieferbar: auto.lieferbar,
             datum: auto.datum,
-            modellNummer: auto.modellNummer,
+            modellnummer: auto.modellnummer,
             homepage: auto.homepage,
             kategorien,
             _links: links,

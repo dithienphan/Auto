@@ -15,7 +15,7 @@ import { loginRest } from '../login.js';
 // T e s t d a t e n
 // -----------------------------------------------------------------------------
 const geaendertesAuto: AutoUpdateDTO = {
-    // modellNummer wird nicht geaendet
+    // modellnummer wird nicht geaendet
     modell: 'Geaendert',
     ps: 1,
     art: 'ELEKTRO',
@@ -24,7 +24,7 @@ const geaendertesAuto: AutoUpdateDTO = {
     rabatt: 0.044,
     lieferbar: true,
     datum: '2022-02-03',
-    modellNummer: '0007097328',
+    modellnummer: '0007097328',
     homepage: 'https://test.te',
 };
 const idVorhanden = '00000000-0000-0000-0000-000000000040';
@@ -38,7 +38,7 @@ const geaendertesAutoIdNichtVorhanden: AutoUpdateDTO = {
     rabatt: 0.044,
     lieferbar: true,
     datum: '2022-02-04',
-    modellNummer: '0007097328',
+    modellnummer: '0007097328',
     homepage: 'https://test.te',
 };
 const idNichtVorhanden = '99999999-9999-9999-9999-999999999999';
@@ -52,10 +52,10 @@ const geaendertesAutoInvalid: Record<string, unknown> = {
     rabatt: 2,
     lieferbar: true,
     datum: '12345-123-123',
-    modellNummer: 'falsche-modellNummer',
+    modellNummer: 'falsche-modellnummer',
 };
 
-// modellNummer wird nicht geaendet
+// modellnummer wird nicht geaendet
 const veraltesAuto: AutoUpdateDTO = {
     modell: 'Veraltet',
     ps: 1,
@@ -65,7 +65,7 @@ const veraltesAuto: AutoUpdateDTO = {
     rabatt: 0.044,
     lieferbar: true,
     datum: '2022-02-03',
-    modellNummer: '0007097328',
+    modellnummer: '0007097328',
     homepage: 'https://test.te',
 };
 
@@ -167,7 +167,7 @@ describe('PUT /:id', () => {
                 'Der Hersteller eines Autoes muss AUDI oder BMW sein.',
                 'Der Rabatt muss ein Wert zwischen 0 und 1 sein.',
                 'Das Datum muss im Format yyyy-MM-dd sein.',
-                'Die modellNummer-Nummer ist nicht korrekt.',
+                'Die modellnummer-Nummer ist nicht korrekt.',
             ]),
         );
     });

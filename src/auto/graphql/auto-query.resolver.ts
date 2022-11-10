@@ -77,7 +77,7 @@ export class AutoQueryResolver {
             rabatt: auto.rabatt,
             lieferbar: auto.lieferbar,
             datum: auto.datum,
-            modellNummer: auto.modellNummer,
+            modellnummer: auto.modellnummer,
             homepage: auto.homepage,
             kategorien,
         };
