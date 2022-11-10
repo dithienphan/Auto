@@ -13,7 +13,6 @@ import { AutoValidationService } from './auto-validation.service.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Kategorie } from '../entity/kategorie.entity.js';
-import { MailService } from '../../mail/mail.service.js';
 import RE2 from 're2';
 import { getLogger } from '../../logger/logger.js';
 import { v4 as uuid } from 'uuid';
@@ -28,21 +27,16 @@ export class AutoWriteService {
 
     readonly #autoValidationService: AutoValidationService;
 
-    readonly #mailService: MailService;
-
     readonly #logger = getLogger(AutoWriteService.name);
 
-    // eslint-disable-next-line max-params
     constructor(
         @InjectRepository(Auto) autoRepository: Repository<Auto>,
         autoReadService: AutoReadService,
         autoValidationService: AutoValidationService,
-        mailService: MailService,
     ) {
         this.#autoRepository = autoRepository;
         this.#autoReadService = autoReadService;
         this.#autoValidationService = autoValidationService;
-        this.#mailService = mailService;
     }
 
     async create(auto: Auto): Promise<CreateError | string> {
@@ -60,8 +54,6 @@ export class AutoWriteService {
         // implizite Transaktion
         const autoDb = await this.#autoRepository.save(auto);
         this.#logger.debug('create: AutoDb=%o', autoDb);
-
-        await this.#sendmail(autoDb);
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         return autoDb.id!;
@@ -177,12 +169,6 @@ export class AutoWriteService {
 
         this.#logger.debug('#validateCreate: ok');
         return undefined;
-    }
-
-    async #sendmail(auto: Auto) {
-        const subject = `Neues Auto ${auto.id}`;
-        const body = `Das Auto mit vom Hersteller <strong>${auto.hersteller}</strong> ist angelegt worden`;
-        await this.#mailService.sendmail(subject, body);
     }
 
     async #validateUpdate(
