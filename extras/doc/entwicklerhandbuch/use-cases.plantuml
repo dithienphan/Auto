@@ -32,6 +32,4 @@ rectangle auto {
     Kunde --> (Auto ändern)
 }
 
-footer (c) Jürgen Zimmermann
-
 @enduml

@@ -15,8 +15,7 @@
 
 // Preview durch <Strg><Shift>v
 
-= Entwickler/innen/handauto
-Jürgen Zimmermann <Juergen.Zimmermann@h-ka.de>
+= Entwicklerhandbuch
 :doctype: book
 :toc: left
 :sectanchors:
@@ -41,7 +40,8 @@ IMPORTANT: Copyright (C) 2020 - present Jürgen Zimmermann, Hochschule Karlsruhe
 
 === Der Applikationsserver im Überblick
 
-Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.
+Der Applikationsserver kann von verschiedenen Personengruppen für das Lesen,
+Schreiben, Ändern und Löschen von Autodaten genutzt werden.
 
 .Use Cases
 [plantuml,use-cases,svg]
@@ -49,8 +49,7 @@ Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.
 include::use-cases.plantuml[]
 ----
 
-Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor
-accumsan tincidunt.
+Der Server besteht aus verschiedenen Komponenten.
 
 .Komponentendiagramm
 [plantuml,komponenten,svg]
@@ -60,11 +59,7 @@ include::komponenten.plantuml[]
 
 === Die REST-Schnittstelle
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
-ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit
-amet ligula.
+Der AutoGetController ist für Lesezugriffe an der REST-Schnittstelle zuständig.
 
 ."AutoGetController" für Lesezugriffe an der REST-Schnittstelle
 [plantuml,AutoGetController,svg]
@@ -72,8 +67,7 @@ amet ligula.
 include::AutoGetController.plantuml[]
 ----
 
-Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec
-sollicitudin molestie malesuada.
+Der AutoWriteController ist für Schreibzugriffe an der REST-Schnittstelle zuständig.
 
 ."AutoWriteController" für Schreibzugriffe an der REST-Schnittstelle
 [plantuml,AutoGetController,svg]
@@ -83,7 +77,7 @@ include::AutoWriteController.plantuml[]
 
 === Die GraphQL-Schnittstelle
 
-Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.
+Der AutoQueryResolver ist für Lesezugriffe an der GraphQL-Schnittstelle zuständig.
 
 .AutoQueryResolver für Lesezugriffe an der GraphQL-Schnittstelle
 [plantuml,AutoQueryResolver,svg]
@@ -91,8 +85,7 @@ Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.
 include::AutoQueryResolver.plantuml[]
 ----
 
-Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a
-pellentesque nec, egestas non nisi.
+Der AutoMutationResolver ist für Schreibzugriffe an der GraphQL-Schnittstelle zuständig.
 
 .AutoMutationResolver für Schreibzugriffe an der GraphQL-Schnittstelle
 [plantuml,AutoMutationResolver,svg]
@@ -102,7 +95,7 @@ include::AutoMutationResolver.plantuml[]
 
 === Der Anwendungskern
 
-Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.
+Der AutoReadService verarbeitet die Lesezugriffe.
 
 ."AutoReadService" im Anwendungskern
 [plantuml,AutoReadService,svg]
@@ -110,8 +103,7 @@ Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.
 include::AutoReadService.plantuml[]
 ----
 
-Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget
-malesuada.
+Der AutoWriteService verarbeitet die Schreibzugriffe.
 
 ."AutoWriteService" im Anwendungskern
 [plantuml,AutoWriteService,svg]
@@ -121,8 +113,7 @@ include::AutoWriteService.plantuml[]
 
 === Klasse für Entities
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat,
-accumsan id imperdiet et, porttitor at sem.
+In der Entity Klasse Auto liegt der Schwerpunkt auf den Daten eines Autos.
 
 .Entity
 [plantuml,Auto,svg]

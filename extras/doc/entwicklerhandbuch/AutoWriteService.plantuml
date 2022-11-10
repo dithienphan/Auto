@@ -44,14 +44,13 @@ package auto {
 
   package service #DDDDDD {
     class AutoInvalid
-    class TitelExists
-    class IsbnExists
+    class ModellNummerExists
     class VersionInvalid
     class VersionOutdated
 
     class AutoWriteService << control >> <<@Injectable()>> {
-      + async create(auto: Auto): Promise<string|AutoInvalid|TitelExists|IsbnExists>
-      + async update(id: string, auto: Auto, version: string): Promise<number|AutoInvalid|TitelExists|IsbnExists|VersionInvalid|VersionOutdated>
+      + async create(auto: Auto): Promise<string|AutoInvalid|ModellNummerExists>
+      + async update(id: string, auto: Auto, version: string): Promise<number|AutoInvalid|ModellNummerExists|VersionInvalid|VersionOutdated>
       + async delete(id: string): Promise<boolean>
     }
 
@@ -66,8 +65,7 @@ package auto {
     AutoWriteService .up.> Promise
     AutoWriteService ..> Auto
     AutoWriteService .up.> AutoInvalid
-    AutoWriteService .up.> TitelExists
-    AutoWriteService .up.> IsbnExists
+    AutoWriteService .up.> ModellNummerExists
     AutoWriteService .up.> VersionInvalid
     AutoWriteService .up.> VersionOutdated
 
@@ -75,7 +73,7 @@ package auto {
     Auto .up[hidden].> Promise
     Auto .up[hidden].> Injectable
     Auto .up[hidden].> InjectRepository
-    TitelExists .up[hidden].> Auto
+    ModellNummerExists .up[hidden].> Auto
     AutoValidationService .[hidden].> Repository
     AutoValidationService .[hidden].> MailService
   }
