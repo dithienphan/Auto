@@ -66,17 +66,16 @@ X-REQUEST-TYPE: GraphQL
 mutation {
   create(
     input: {
-      titel: "Testgraphql",
-      rating: 1,
-      art: KINDLE,
-      verlag: FOO_VERLAG,
-      preis: 99.9,
-      rabatt: 0.1,
+      modell: 'Alpha',
+      ps: 4,
+      art: 'VERBRENNER',
+      hersteller: 'AUDI',
+      preis: 11.1,
+      rabatt: 0.011,
       lieferbar: true,
-      datum: "2022-01-31",
-      isbn: "3897225832",
-      homepage: "http://test.de/",
-      schlagwoerter: ["SUV"]
+      datum: new Date('2022-02-01'),
+      modellNummer: '9783897225831',
+      homepage: 'https://acme.at/'
     }
   )
 }
@@ -90,18 +89,19 @@ X-REQUEST-TYPE: GraphQL
 mutation {
   create(
     input: {
-      titel: "?!$",
-      rating: 999,
-      art: KINDLE,
-      verlag: FOO_VERLAG,
-      preis: -999,
-      rabatt: 999,
+      id: "00000000-0000-0000-0000-000000000003",
+      version: 0,
+      modell: '&/$$(%§"&$§"%$"§&/',
+      ps: 4,
+      art: 'VERBRENNER',
+      hersteller: 'AUDI',
+      preis: 11.1,
+      rabatt: 0.011,
       lieferbar: true,
-      datum: "123",
-      isbn: "123",
-      homepage: "?!$",
-      schlagwoerter: ["KOMBI"]
-    }
+      datum: new Date('2022-02-01'),
+      modellNummer: '9783897225831',
+      homepage: 'https://acme.at/'
+    },
   )
 }
 
@@ -116,17 +116,17 @@ mutation {
     input: {
       id: "00000000-0000-0000-0000-000000000003",
       version: 0,
-      titel: "Geaendertgraphql",
-      rating: 5,
-      art: DRUCKAUSGABE,
-      verlag: FOO_VERLAG,
-      preis: 99.99,
-      rabatt: 0.099,
-      lieferbar: false,
-      datum: "2022-02-01",
-      isbn: "9780201633610",
-      homepage: "https://test.graphql/"
-    }
+      modell: 'Alpha',
+      ps: 4,
+      art: 'VERBRENNER',
+      hersteller: 'AUDI',
+      preis: 11.1,
+      rabatt: 0.011,
+      lieferbar: true,
+      datum: new Date('2022-02-01'),
+      modellNummer: '9783897225831',
+      homepage: 'https://acme.at/'
+    },
   )
 }
 
@@ -139,19 +139,19 @@ X-REQUEST-TYPE: GraphQL
 mutation {
   update(
     input: {
-      id: "00000000-0000-0000-0000-000000000003",
+      id: "99999999-9999-9999-9999-999999999999",
       version: 0,
-      titel: "?!$",
-      rating: 999,
-      art: KINDLE,
-      verlag: FOO_VERLAG,
-      preis: -999,
-      rabatt: 999,
-      lieferbar: false,
-      datum: "123",
-      isbn: "123",
-      homepage: "?!$"
-    }
+      modell: 'Alpha',
+      ps: 4,
+      art: 'VERBRENNER',
+      hersteller: 'AUDI',
+      preis: 11.1,
+      rabatt: 0.011,
+      lieferbar: true,
+      datum: new Date('2022-02-01'),
+      modellNummer: '9783897225831',
+      homepage: 'https://acme.at/'
+    },
   )
 }
 
@@ -164,18 +164,16 @@ X-REQUEST-TYPE: GraphQL
 mutation {
   update(
     input: {
-      id: "99999999-9999-9999-9999-999999999999",
-      version: 0,
-      titel: "Nichtvorhanden",
-      rating: 5,
-      art: DRUCKAUSGABE,
-      verlag: FOO_VERLAG,
-      preis: 99.99,
-      rabatt: 0.099,
-      lieferbar: false,
-      datum: "2022-02-01",
-      isbn: "9780201633610",
-      homepage: "https://test.de/"
+      modell: 'Alpha',
+      ps: 4,
+      art: 'VERBRENNER',
+      hersteller: 'AUDI',
+      preis: 11.1,
+      rabatt: 0.011,
+      lieferbar: true,
+      datum: new Date('2022-02-01'),
+      modellNummer: '9783897225831',
+      homepage: 'https://acme.at/'
     }
   )
 }

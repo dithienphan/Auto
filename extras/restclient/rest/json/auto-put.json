@@ -1,0 +1,12 @@
+{
+  "modell":"Audi S8",
+  "ps":4,
+  "art":"VERBRENNER",
+  "hersteller":"AUDI",
+  "preis":11.1,
+  "rabatt":0.011,
+  "lieferbar":true,
+  "datum":"2022-02-01T00:00:00.000Z",
+  "modellNummer":"9783897225831",
+  "homepage":"https://acme.at/"
+}

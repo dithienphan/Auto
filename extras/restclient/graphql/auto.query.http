@@ -19,7 +19,7 @@
 
 // siehe auch https://studio.apollographql.com/sandbox/explorer
 
-### Suche id, titel, art und version von allen Autosn
+### Suche id, modeell, art und version von allen Autos
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
@@ -27,22 +27,22 @@ X-REQUEST-TYPE: GraphQL
 {
   autos {
     id
-    titel
+    modell
     art
     version
   }
 }
 
-### Suche titel, art, isbn und version von einem Auto mit vorhandener Auto-ID
+### Suche modell, art, modellNummer und version von einem Auto mit vorhandener Auto-ID
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
 query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
   auto(id: $id) {
-    titel
+    modell
     art
-    isbn
+    modellNummer
     version
   }
 }
@@ -51,14 +51,14 @@ query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
   "id": "00000000-0000-0000-0000-000000000001"
 }
 
-### Suche titel von einem Auto mit nicht-vorhandener Auto-ID
+### Suche der modell von einem Auto mit nicht-vorhandener Auto-ID
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
 query ($id: ID! = "99999999-9999-9999-9999-999999999999") {
   auto(id: $id) {
-    titel
+    modell
   }
 }
 
@@ -66,45 +66,45 @@ query ($id: ID! = "99999999-9999-9999-9999-999999999999") {
   "id": "99999999-9999-9999-9999-999999999999"
 }
 
-### Suche art von Autosn mit vorhandenem Titel
+### Suche art von Autos mit vorhandenem modell
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($titel: String = "Alpha") {
-  autos(titel: $titel) {
+query ($modell: String = "BMW") {
+  autos(modell: $modell) {
     art
   }
 }
 
 {
-  "titel": "Alpha"
+  "titel": "BMW"
 }
 
-### Suche titel, art und schlagwoerter von Autosn mit vorhandenem Titel
+### Suche modell, art und kategorien von Auto mit vorhandenem modell
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($titel: String = "a") {
-  autos(titel: $titel) {
-    titel
+query ($modell: String = "AUDI S8") {
+  autos(modell: $modell) {
+    modell
     art
-    schlagwoerter
+    kategorien
   }
 }
 
 {
-  "titel": "a"
+  "titel": "AUDI S8"
 }
 
-### Suche art von Autosn mit NICHT-vorhandenem Titel
+### Suche art von Autos mit NICHT-vorhandenem modell
 POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($titel: String = "Nichtvorhanden") {
-  autos(titel: $titel) {
+query ($modell: String = "Nichtvorhanden") {
+  autos(modell: $modell) {
     art
   }
 }
